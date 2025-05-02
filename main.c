@@ -25,6 +25,39 @@ int fatorial()
 
 int palindromo()
 {
+    char palavra[100];
+    char invertido[100];
+
+    /*
+    Início do programa
+    */
+
+    // Pega palavra do usuário
+    printf("Escreva uma palavra: ");
+    scanf("%s", palavra);
+
+    // Pega tamanho de len
+    int len = strlen(palavra);
+
+    // Inverte a palavra
+    for (int i = 0; i < len; i++)
+    {
+        invertido[i] = palavra[len - i - 1];
+    }
+    invertido[len] = '\0'; // Adiciona o caractere nulo ao final da string invertida
+
+    printf("Palavra: %s\n", palavra);
+
+    if (strcmp(palavra, invertido) == 0)
+    {
+        printf("A palavra é um palíndromo");
+    }
+    else
+    {
+        printf("A palavra não é um palíndromo");
+    }
+
+    return 0;
 }
 
 int substring()
