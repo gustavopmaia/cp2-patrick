@@ -3,7 +3,12 @@
 void fibonacci(int n)
 {
     // Criando vetor com N posições solicitado pelo usuário, e variável de iteração "i"
-    int vetor[n];
+    double vetor[n];
+    /*
+        É utilizado double devido ao tamanho de 64bits, 
+        como termos do fibonacci superam 32bits tal tipo possibilita 
+        trabalharmos com números menores e maiores do que o tipo int
+    */
     int i = 0;
 
     for (i; i < n; i++)
@@ -14,8 +19,8 @@ void fibonacci(int n)
         */
         vetor[i] = i == 0 ? 0 : i == 1 ? 1
                                        : vetor[i - 1] + vetor[i - 2];
-        // Exibindo o valor do item atual do vetor
-        printf("%i ", vetor[i]);
+        // Exibindo o valor do item atual do vetor sem casas decimais
+        printf("%.0f ", vetor[i]);
     }
 }
 
