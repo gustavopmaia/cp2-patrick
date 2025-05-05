@@ -19,8 +19,36 @@ void fibonacci(int n)
     }
 }
 
+// Função auxiliar para calcular o fatorial de um número
+long int calcularFatorial(int numero) {
+    long int fatorial = 1;
+    for (int i = 1; i <= numero; i++) {
+        fatorial *= i;
+    }
+    return fatorial;
+}
+
+// Função que exibe os fatoriais de 1 até n
 int fatorial()
 {
+    int n;
+
+    printf("Digite um número inteiro (1 a 20): ");
+    scanf("%d", &n);
+
+    if (n < 1 || n > 20)
+    {
+        printf("Por favor, insira um número entre 1 e 20.\n");
+        return 1;
+    }
+
+    printf("Fatoriais:\n");
+    for (int i = 1; i <= n; i++)
+    {
+        printf("%d! = %ld\n", i, calcularFatorial(i));
+    }
+
+    return 0;
 }
 
 int palindromo()
