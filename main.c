@@ -62,19 +62,31 @@ int palindromo()
 
 int substring()
 {
+    // Definindo dois vetores, onde vou armazenar a frase e a palavra em seus respectivos vetores
     char frase[100];
     char palavra[100];
+    
+    // Limpo o buffer do teclado (limpando "lixo" que possa ter ficado após um scanf ou fgets)
+    getchar();
 
+    // Pego a frase do usuário e armazeno
     printf("Qual a frase que quer procurar? ");
-    gets(frase, sizeof(frase), stdin);
+    fgets(frase, sizeof(frase), stdin);
+    // Removendo o \n que vem quando o usuário pressiona enter
     frase[strcspn(frase, "\n")] = 0;
 
-    printf("\nQual a palavra que está procurando? ");
-    scanf("\n %s", &palavra);
-    palavra[strcspn(palavra, "\n")] = 0;
-
-    printf("\nFrase: %s", frase);
-    printf("\nPalavra: %s", palavra);
+    // Armazeno a palavra que o usuário está procurando
+    printf("Qual a palavra que está procurando? ");
+    scanf("%s", palavra);
+    
+    // A função strstr procura se uma palavra aparece dentro de uma frase e retorna um ponteiro para aquela posição.
+    if (strstr(frase, palavra) != NULL) {
+        printf("A palavra \"%s\" está contida na frase \"%s\".\n", palavra, frase);
+    }
+    else {
+        printf("A palavra \"%s\" NÃO está contida na frase \"%s\".\n", palavra, frase);
+    }
+    return 0;
 }
 
 int main()
