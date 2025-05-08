@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
+// Fibonacci - Gabriel Fidalgo RM563213
+// Fatoriais - Pedro Lima - RM565461
+// Palindromo - Luiggi Peotta - RM563607
+// Substring - Gustavo Maia - RM562240
+
 void fibonacci(int n)
 {
     // Criando vetor com N posições solicitado pelo usuário, e variável de iteração "i"
